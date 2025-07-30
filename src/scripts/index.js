@@ -56,7 +56,7 @@ function Loadpage(page_name){
     })
 }
 $(function(){
-    Loadpage('public/pages/home.html');
+    Loadpage('home.html');
 
     //on click New User--Home
     $(document).on('click','#btnnewuser',()=>{
