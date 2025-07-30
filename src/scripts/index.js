@@ -10,7 +10,7 @@ function Loaddash(){
             $('#lbluser').html($.cookie('userid'))
             $.ajax({
                 method:'get',
-                url:`https://de3d93b25c32.ngrok-free.app/appointments/${$.cookie('userid')}`,
+                url:`http://127.0.0.1:4040/appointments/${$.cookie('userid')}`,
                 success:(appointments=>{
                     appointments.map(appointment=>{
                         $(`<div class="card p-2 m-2  bg-success" style="box-shadow: 2px 2px 2px black; width:350px;">
@@ -86,7 +86,7 @@ $(function(){
         }
         $.ajax({
             method:"post",
-            url:`https://de3d93b25c32.ngrok-free.app/register-user`,
+            url:`http://127.0.0.1:4040/register-user`,
             data:user,
             success:()=>{
                 alert('User Registered');
@@ -106,7 +106,7 @@ $(function(){
         var user_id=$("#user_id").val();
         $.ajax({
             method:'get',
-            url:`https://de3d93b25c32.ngrok-free.app/users/${user_id}`,
+            url:`http://127.0.0.1:4040/users/${user_id}`,
             success:(userDetails)=>{
                 if(userDetails){
                     if($('#password').val()===userDetails.password){
@@ -144,7 +144,7 @@ $(function(){
         }
         $.ajax({
             method:'post',
-            url:`https://de3d93b25c32.ngrok-free.app/add-appointment`,
+            url:`http://127.0.0.1:4040/add-appointment`,
             data:appointment
         })
         alert('Appointment Added')
@@ -160,7 +160,7 @@ $(function(){
         Loadpage('edit_appointment.html')
         $.ajax({
             method:'get',
-            url:`https://de3d93b25c32.ngrok-free.app/appointment/${e.target.value}`,
+            url:`http://127.0.0.1:4040/${e.target.value}`,
             success:(appointment=>{
                 $("#appointment_id").val(appointment.appointment_id),
                 $("#title").val(appointment.title),
@@ -188,7 +188,7 @@ $(function(){
         }
         $.ajax({
             method:'put',
-            url:`https://de3d93b25c32.ngrok-free.app/edit-appointment/${sessionStorage.getItem("appointment_id")}`,
+            url:`http://127.0.0.1:4040/${sessionStorage.getItem("appointment_id")}`,
             data:appointment
         })
         alert('Appointment Updated Successfully')
@@ -200,7 +200,7 @@ $(function(){
         if(choice==true){
             $.ajax({
             method:'delete',
-            url:`https://de3d93b25c32.ngrok-free.app/delete-appointment/${e.target.value}`,
+            url:`http://127.0.0.1:4040/delete-appointment/${e.target.value}`,
             
             })
             alert('Appointment Deleted..')
