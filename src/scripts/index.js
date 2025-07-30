@@ -3,7 +3,7 @@ function Loaddash(){
     if($.cookie('userid')){
         $.ajax({
         method:"get",
-        url:`../../public/pages/user-dash.html`,
+        url:`././public/pages/user-dash.html`,
         success:(response)=>{
 
             $('section').html(response);
@@ -39,7 +39,7 @@ function Loaddash(){
    }else{
         $.ajax({
         method:"get",
-        url:`../../public/pages/${page_name}`,
+        url:`././public/pages/${page_name}`,
         success:(response)=>{
             $('section').html(response);
         }
@@ -49,7 +49,7 @@ function Loaddash(){
 function Loadpage(page_name){
         $.ajax({
         method:"get",
-        url:`../../public/pages/${page_name}`,
+        url:`././public/pages/${page_name}`,
         success:(response)=>{
             $('section').html(response);
         }
