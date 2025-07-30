@@ -10,7 +10,7 @@ function Loaddash(){
             $('#lbluser').html($.cookie('userid'))
             $.ajax({
                 method:'get',
-                url:`http://127.0.0.1:4040/appointments/${$.cookie('userid')}`,
+                url:` https://de3d93b25c32.ngrok-free.app/appointments/${$.cookie('userid')}`,
                 success:(appointments=>{
                     appointments.map(appointment=>{
                         $(`<div class="card p-2 m-2  bg-success" style="box-shadow: 2px 2px 2px black; width:350px;">
@@ -106,7 +106,7 @@ $(function(){
         var user_id=$("#user_id").val();
         $.ajax({
             method:'get',
-            url:`http://127.0.0.1:4040/users/${user_id}`,
+            url:` https://de3d93b25c32.ngrok-free.app/users/${user_id}`,
             success:(userDetails)=>{
                 if(userDetails){
                     if($('#password').val()===userDetails.password){
