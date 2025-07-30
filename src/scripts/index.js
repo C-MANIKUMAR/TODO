@@ -1,4 +1,4 @@
-
+   
 function Loaddash(){
     if($.cookie('userid')){
         $.ajax({
@@ -56,7 +56,7 @@ function Loadpage(page_name){
     })
 }
 $(function(){
-    Loadpage('home.html');
+    Loadpage('public/pages/home.html');
 
     //on click New User--Home
     $(document).on('click','#btnnewuser',()=>{
